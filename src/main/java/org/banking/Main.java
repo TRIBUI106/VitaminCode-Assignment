@@ -12,7 +12,7 @@ public class Main {
 
 
         try {
-            customerDAO cDao =new customerDAO();
+            customerDAO cDao = new customerDAO();
 
             while(true)
             {
