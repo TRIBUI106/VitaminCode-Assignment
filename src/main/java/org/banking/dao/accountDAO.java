@@ -42,7 +42,7 @@ public class accountDAO implements DAO<Account, Integer> {
         while (rs.next()) {
             Account account = new Account();
             account.setId(rs.getInt("id"));
-            account.setCustomer_id();d(rs.getInt("customer_id"));
+            account.setCustomer_id(rs.getInt("customer_id"));
             account.setBranch_id(rs.getInt("branch_id"));
             account.setBalance(rs.getBigDecimal("balance"));
             accounts.add(account);
@@ -58,8 +58,8 @@ public class accountDAO implements DAO<Account, Integer> {
         if (rs.next()) {
             account = new Account();
             account.setId(rs.getInt("id"));
-            account.setCustomerId(rs.getInt("customer_id"));
-            account.setBranchId(rs.getInt("branch_id"));
+            account.setCustomer_id(rs.getInt("customer_id"));
+            account.setBranch_id(rs.getInt("branch_id"));
             account.setBalance(rs.getBigDecimal("balance"));
         }
         return account;
