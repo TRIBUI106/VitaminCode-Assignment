@@ -19,13 +19,13 @@ public class loanDAO implements DAO<Loan, Integer> {
     @Override
     public Integer insert(Loan entity) throws SQLException {
         String sql = "INSERT INTO loans (account_id, load_package_id, amount, interest_rate, term_in_months, start_date, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getLoad_package_id(), entity.getAmount(), entity.getInterestRate(), entity.getTermInMonths(), entity.getStartDate(), entity.getStatus());
+        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getLoad_package_id(), entity.getAmount(), entity.getInterest_rate(), entity.getTerm_in_months(), entity.getStart_date(), entity.getStatus());
     }
 
     @Override
     public Integer update(Loan entity, Integer id) throws SQLException {
         String sql = "UPDATE loans SET account_id = ?, load_package_id = ?, amount = ?, interest_rate = ?, term_in_months = ?, start_date = ?, status = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getLoad_package_id(), entity.getAmount(), entity.getInterestRate(), entity.getTermInMonths(), entity.getStartDate(), entity.getStatus(), id);
+        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getLoad_package_id(), entity.getAmount(), entity.getInterest_rate(), entity.getTerm_in_months(), entity.getStart_date(), entity.getStatus(), id);
     }
 
     @Override
