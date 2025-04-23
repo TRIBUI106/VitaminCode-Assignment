@@ -45,9 +45,9 @@ public class loanDAO implements DAO<Loan, Integer> {
             loan.setAccount_id(rs.getInt("account_id"));
             loan.setLoad_package_id(rs.getInt("load_package_id"));
             loan.setAmount(rs.getBigDecimal("amount"));
-            loan.setInterestRate(rs.getBigDecimal("interest_rate"));
-            loan.setTermInMonths(rs.getInt("term_in_months"));
-            loan.setStartDate(rs.getDate("start_date"));
+            loan.setInterest_rate(rs.getBigDecimal("interest_rate"));
+            loan.setTerm_in_months(rs.getInt("term_in_months"));
+            loan.setStart_date(rs.getDate("start_date"));
             loan.setStatus(rs.getString("status"));
             loans.add(loan);
         }
@@ -65,9 +65,9 @@ public class loanDAO implements DAO<Loan, Integer> {
             loan.setAccount_id(rs.getInt("account_id"));
             loan.setLoad_package_id(rs.getInt("load_package_id"));
             loan.setAmount(rs.getBigDecimal("amount"));
-            loan.setInterestRate(rs.getBigDecimal("interest_rate"));
-            loan.setTermInMonths(rs.getInt("term_in_months"));
-            loan.setStartDate(rs.getDate("start_date"));
+            loan.setInterest_rate(rs.getBigDecimal("interest_rate"));
+            loan.setTerm_in_months(rs.getInt("term_in_months"));
+            loan.setStart_date(rs.getDate("start_date"));
             loan.setStatus(rs.getString("status"));
         }
         return loan;
