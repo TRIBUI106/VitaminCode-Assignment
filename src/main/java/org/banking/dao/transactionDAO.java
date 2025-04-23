@@ -42,10 +42,10 @@ public class transactionDAO implements DAO<Transaction, Integer> {
         while (rs.next()) {
             Transaction transaction = new Transaction();
             transaction.setId(rs.getInt("id"));
-            transaction.setFromAccount(rs.getInt("from_account"));
-            transaction.setToAccount(rs.getInt("to_account"));
-            transaction.setAmount(rs.getBigDecimal("amount"));
-            transaction.setCreatedAt(rs.getTimestamp("created_at"));
+            transaction.setFrom_account(rs.getInt("from_account"));
+            transaction.setTo_account(rs.getInt("to_account"));
+            transaction.setAmout(rs.getBigDecimal("amount"));
+            transaction.setCreated_at(rs.getTimestamp("created_at"));
             transactions.add(transaction);
         }
         return transactions;
@@ -59,10 +59,10 @@ public class transactionDAO implements DAO<Transaction, Integer> {
         if (rs.next()) {
             transaction = new Transaction();
             transaction.setId(rs.getInt("id"));
-            transaction.setFromAccount(rs.getInt("from_account"));
-            transaction.setToAccount(rs.getInt("to_account"));
-            transaction.setAmount(rs.getBigDecimal("amount"));
-            transaction.setCreatedAt(rs.getTimestamp("created_at"));
+            transaction.setFrom_account(rs.getInt("from_account"));
+            transaction.setTo_account(rs.getInt("to_account"));
+            transaction.setAmout(rs.getBigDecimal("amount"));
+            transaction.setCreated_at(rs.getTimestamp("created_at"));
         }
         return transaction;
     }
