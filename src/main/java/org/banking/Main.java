@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -14,6 +15,7 @@ import java.util.regex.Pattern;
 public class Main {
     // Scanner để đọc dữ liệu từ người dùng
     private static final Scanner sc = new Scanner(System.in);
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     // Hàm kiểm tra định dạng email
     private static boolean isValidEmail(String email) {
@@ -29,7 +31,7 @@ public class Main {
 
     // Hàm kiểm tra số tiền không âm
     private static boolean isNonNegative(BigDecimal amount) {
-        return amount.compareTo(BigDecimal.ZERO) >= 0;
+        return amount != null && amount.compareTo(BigDecimal.ZERO) >= 0;
     }
 
     // Hàm kiểm tra số thẻ (16 chữ số)
@@ -69,6 +71,12 @@ public class Main {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    // Hàm chuyển đổi Date sang định dạng dd/MM/yyyy để hiển thị
+    private static String formatDate(Date date) {
+        if (date == null) return "N/A";
+        return dateFormat.format(date);
     }
 
     public static void main(String[] args) {
@@ -323,7 +331,7 @@ public class Main {
                         } else {
                             for (Card item : cardList) {
                                 System.out.printf("ID: %d | ID Tài khoản: %d | Số thẻ: %s | Ngày hết hạn: %s%n",
-                                        item.getId(), item.getAccountId(), item.getCardNumber(), item.getExpiryDate());
+                                        item.getId(), item.getAccountId(), item.getCardNumber(), formatDate(item.getExpiryDate()));
                             }
                         }
                         break;
@@ -566,8 +574,8 @@ public class Main {
                             break;
                         }
                         // Chuyển đổi định dạng sang YYYY-MM-DD
-                        String[] dateParts = startDate.split("/");
-                        String formattedStartDate = dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
+                        String[] dateParts2 = startDate.split("/");
+                        String formattedStartDate = dateParts2[2] + "-" + dateParts2[1] + "-" + dateParts2[0];
                         loan.setStartDate(Date.valueOf(formattedStartDate));
 
                         System.out.print("Nhập trạng thái (ACTIVE/PAID/OVERDUE): ");
@@ -594,7 +602,7 @@ public class Main {
                             for (Loan item : loanList) {
                                 System.out.printf("ID: %d | ID Tài khoản: %d | ID Gói vay: %d | Số tiền: %.2f VNĐ | Lãi suất: %.2f%% | Thời hạn: %d tháng | Ngày bắt đầu: %s | Trạng thái: %s%n",
                                         item.getId(), item.getAccountId(), item.getLoadPackageId(), item.getAmount(),
-                                        item.getInterestRate(), item.getTermInMonths(), item.getStartDate(), item.getStatus());
+                                        item.getInterestRate(), item.getTermInMonths(), formatDate(item.getStartDate()), item.getStatus());
                             }
                         }
                         break;
@@ -602,6 +610,7 @@ public class Main {
                     case 14: // Thoát chương trình
                         System.out.println("Đã thoát chương trình! Cảm ơn bạn đã sử dụng.");
                         return;
+
                     default:
                         System.out.println("Chức năng không hợp lệ! Vui lòng chọn từ 1 đến 14.");
                 }
