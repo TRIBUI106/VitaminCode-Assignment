@@ -19,13 +19,13 @@ public class transactionDAO implements DAO<Transaction, Integer> {
     @Override
     public Integer insert(Transaction entity) throws SQLException {
         String sql = "INSERT INTO transactions (from_account, to_account, amount, created_at) VALUES (?, ?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getFromAccount(), entity.getToAccount(), entity.getAmount(), entity.getCreatedAt());
+        return db.exeuteUpdate(sql, entity.getFrom_account(), entity.getTo_account(), entity.getAmout(), entity.getCreated_at());
     }
 
     @Override
     public Integer update(Transaction entity, Integer id) throws SQLException {
         String sql = "UPDATE transactions SET from_account = ?, to_account = ?, amount = ?, created_at = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getFromAccount(), entity.getToAccount(), entity.getAmount(), entity.getCreatedAt(), id);
+        return db.exeuteUpdate(sql, entity.getFrom_account(), entity.getTo_account(), entity.getAmout(), entity.getCreated_at(), id);
     }
 
     @Override
