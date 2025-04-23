@@ -19,13 +19,13 @@ public class loanPackageDAO implements DAO<Loan_Package, Integer> {
     @Override
     public Integer insert(Loan_Package entity) throws SQLException {
         String sql = "INSERT INTO loan_packages (name, max_amount, interest_rate, min_monthly_income, min_transaction_count, description) VALUES (?, ?, ?, ?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getName(), entity.getMaxAmount(), entity.getInterestRate(), entity.getMinMonthlyIncome(), entity.getMinTransactionCount(), entity.getDescription());
+        return db.exeuteUpdate(sql, entity.getName(), entity.getMax_amout(), entity.getInterest_rate(), entity.getMin_monthly_income(), entity.getMin_transaction_count(), entity.getDescription());
     }
 
     @Override
     public Integer update(Loan_Package entity, Integer id) throws SQLException {
         String sql = "UPDATE loan_packages SET name = ?, max_amount = ?, interest_rate = ?, min_monthly_income = ?, min_transaction_count = ?, description = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getName(), entity.getMaxAmount(), entity.getInterestRate(), entity.getMinMonthlyIncome(), entity.getMinTransactionCount(), entity.getDescription(), id);
+        return db.exeuteUpdate(sql, entity.getName(), entity.getMax_amout(), entity.getInterest_rate(), entity.getMin_monthly_income(), entity.getMin_transaction_count(), entity.getDescription(), id);
     }
 
     @Override
@@ -43,10 +43,10 @@ public class loanPackageDAO implements DAO<Loan_Package, Integer> {
             Loan_Package loanPackage = new Loan_Package();
             loanPackage.setId(rs.getInt("id"));
             loanPackage.setName(rs.getString("name"));
-            loanPackage.setMaxAmount(rs.getBigDecimal("max_amount"));
-            loanPackage.setInterestRate(rs.getBigDecimal("interest_rate"));
+            loanPackage.setMax_amout(rs.getBigDecimal("max_amount"));
+            loanPackage.setInterest_rate(rs.getBigDecimal("interest_rate"));
             loanPackage.setMinMonthlyIncome(rs.getBigDecimal("min_monthly_income"));
-            loanPackage.setMinTransactionCount(rs.getInt("min_transaction_count"));
+            loanPackage.setMin_transaction_count(rs.getInt("min_transaction_count"));
             loanPackage.setDescription(rs.getString("description"));
             loanPackages.add(loanPackage);
         }
@@ -62,10 +62,10 @@ public class loanPackageDAO implements DAO<Loan_Package, Integer> {
             loanPackage = new Loan_Package();
             loanPackage.setId(rs.getInt("id"));
             loanPackage.setName(rs.getString("name"));
-            loanPackage.setMaxAmount(rs.getBigDecimal("max_amount"));
-            loanPackage.setInterestRate(rs.getBigDecimal("interest_rate"));
+            loanPackage.setMax_amout(rs.getBigDecimal("max_amount"));
+            loanPackage.setInterest_rate(rs.getBigDecimal("interest_rate"));
             loanPackage.setMinMonthlyIncome(rs.getBigDecimal("min_monthly_income"));
-            loanPackage.setMinTransactionCount(rs.getInt("min_transaction_count"));
+            loanPackage.setMin_transaction_count(rs.getInt("min_transaction_count"));
             loanPackage.setDescription(rs.getString("description"));
         }
         return loanPackage;
