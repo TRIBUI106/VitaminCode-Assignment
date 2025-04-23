@@ -19,13 +19,13 @@ public class cardDAO implements DAO<Card, Integer> {
     @Override
     public Integer insert(Card entity) throws SQLException {
         String sql = "INSERT INTO cards (account_id, card_number, expiry_date) VALUES (?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getAccountId(), entity.getCardNumber(), entity.getExpiryDate());
+        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getCard_number(), entity.getExpiry_date());
     }
 
     @Override
     public Integer update(Card entity, Integer id) throws SQLException {
         String sql = "UPDATE cards SET account_id = ?, card_number = ?, expiry_date = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getAccountId(), entity.getCardNumber(), entity.getExpiryDate(), id);
+        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getCard_number(), entity.getExpiry_date(), id);
     }
 
     @Override
@@ -42,9 +42,9 @@ public class cardDAO implements DAO<Card, Integer> {
         while (rs.next()) {
             Card card = new Card();
             card.setId(rs.getInt("id"));
-            card.setAccountId(rs.getInt("account_id"));
-            card.setCardNumber(rs.getString("card_number"));
-            card.setExpiryDate(rs.getDate("expiry_date"));
+            card.setAccount_id(rs.getInt("account_id"));
+            card.setCard_number(rs.getString("card_number"));
+            card.setExpiry_date(rs.getDate("expiry_date"));
             cards.add(card);
         }
         return cards;
@@ -58,9 +58,9 @@ public class cardDAO implements DAO<Card, Integer> {
         if (rs.next()) {
             card = new Card();
             card.setId(rs.getInt("id"));
-            card.setAccountId(rs.getInt("account_id"));
-            card.setCardNumber(rs.getString("card_number"));
-            card.setExpiryDate(rs.getDate("expiry_date"));
+            card.setAccount_id(rs.getInt("account_id"));
+            card.setCard_number(rs.getString("card_number"));
+            card.setExpiry_date(rs.getDate("expiry_date"));
         }
         return card;
     }
