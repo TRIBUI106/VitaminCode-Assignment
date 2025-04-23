@@ -18,7 +18,7 @@ public class customerDAO implements DAO<Customer,Integer>{
 
     @Override
     public Integer insert(Customer entity) throws SQLException {
-        String sql = " INSERT INTO vitacode00.customers (name, phone, email, address, monthly_income)\n" +
+        String sql = " INSERT INTO vitamincode00.customers (name, phone, email, address, monthly_income)\n" +
                 "VALUES (?, ?,?, ?,?)";
         Integer rs = db.exeuteUpdate(sql,entity.getName(),entity.getPhone(),entity.getEmail(),entity.getAddress(),entity.getMonthlyIncome());
         return rs;
