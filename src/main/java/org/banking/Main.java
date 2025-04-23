@@ -38,14 +38,35 @@ public class Main {
         return Pattern.matches(cardRegex, cardNumber);
     }
 
-    // Hàm kiểm tra ngày hợp lệ (định dạng YYYY-MM-DD)
+    // Hàm kiểm tra ngày hợp lệ (định dạng dd/MM/yyyy)
     private static boolean isValidDate(String date) {
-        String dateRegex = "^\\d{4}-\\d{2}-\\d{2}$";
+        String dateRegex = "^\\d{2}/\\d{2}/\\d{4}$";
         if (!Pattern.matches(dateRegex, date)) return false;
         try {
-            Date.valueOf(date);
+            // Tách chuỗi ngày thành ngày, tháng, năm
+            String[] parts = date.split("/");
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int year = Integer.parseInt(parts[2]);
+
+            // Kiểm tra giá trị hợp lệ
+            if (month < 1 || month > 12) return false;
+            if (day < 1 || day > 31) return false;
+            if (year < 1900 || year > 9999) return false;
+
+            // Kiểm tra số ngày trong tháng
+            int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            // Kiểm tra năm nhuận
+            if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+                daysInMonth[1] = 29; // Tháng 2 có 29 ngày trong năm nhuận
+            }
+            if (day > daysInMonth[month - 1]) return false;
+
+            // Chuyển đổi sang định dạng YYYY-MM-DD để tạo java.sql.Date
+            String formattedDate = parts[2] + "-" + parts[1] + "-" + parts[0];
+            Date.valueOf(formattedDate); // Kiểm tra nếu định dạng không hợp lệ sẽ ném ngoại lệ
             return true;
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             return false;
         }
     }
