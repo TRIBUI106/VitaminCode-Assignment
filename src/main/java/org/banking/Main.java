@@ -297,13 +297,16 @@ public class Main {
                         }
                         card.setCardNumber(cardNumber);
 
-                        System.out.print("Nhập ngày hết hạn (YYYY-MM-DD): ");
+                        System.out.print("Nhập ngày hết hạn (dd/MM/yyyy): ");
                         String expiryDate = sc.nextLine();
                         if (!isValidDate(expiryDate)) {
-                            System.out.println("Lỗi: Ngày hết hạn không hợp lệ (định dạng YYYY-MM-DD)!");
+                            System.out.println("Lỗi: Ngày hết hạn không hợp lệ (định dạng dd/MM/yyyy)!");
                             break;
                         }
-                        card.setExpiryDate(Date.valueOf(expiryDate));
+                        // Chuyển đổi định dạng sang YYYY-MM-DD
+                        String[] dateParts = expiryDate.split("/");
+                        String formattedExpiryDate = dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
+                        card.setExpiryDate(Date.valueOf(formattedExpiryDate));
 
                         if (cardDao.insert(card) == 0) {
                             System.out.println("Tạo thẻ thất bại!");
@@ -556,13 +559,16 @@ public class Main {
                         }
                         loan.setTermInMonths(termInMonths);
 
-                        System.out.print("Nhập ngày bắt đầu (YYYY-MM-DD): ");
+                        System.out.print("Nhập ngày bắt đầu (dd/MM/yyyy): ");
                         String startDate = sc.nextLine();
                         if (!isValidDate(startDate)) {
-                            System.out.println("Lỗi: Ngày bắt đầu không hợp lệ (định dạng YYYY-MM-DD)!");
+                            System.out.println("Lỗi: Ngày bắt đầu không hợp lệ (định dạng dd/MM/yyyy)!");
                             break;
                         }
-                        loan.setStartDate(Date.valueOf(startDate));
+                        // Chuyển đổi định dạng sang YYYY-MM-DD
+                        String[] dateParts = startDate.split("/");
+                        String formattedStartDate = dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
+                        loan.setStartDate(Date.valueOf(formattedStartDate));
 
                         System.out.print("Nhập trạng thái (ACTIVE/PAID/OVERDUE): ");
                         String status = sc.nextLine().toUpperCase();
