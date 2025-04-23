@@ -8,6 +8,9 @@ public class Account {
     int branch_id;
     BigDecimal balance;
 
+    public Account() {
+    }
+
     public Account(int id, int customer_id, int branch_id, BigDecimal balance) {
         this.id = id;
         this.customer_id = customer_id;

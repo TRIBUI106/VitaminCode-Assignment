@@ -14,6 +14,9 @@ public class Loan {
     Date start_date;
     String status;
 
+    public Loan() {
+    }
+
     public Loan(Date start_date, int id, int account_id, int load_package_id, BigDecimal amout, BigDecimal interest_rate, int term_in_months, String status) {
         this.start_date = start_date;
         this.id = id;

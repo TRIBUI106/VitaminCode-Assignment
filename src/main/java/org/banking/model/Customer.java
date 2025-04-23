@@ -20,6 +20,18 @@ CREATE TABLE customers (
     private String address;
     private  Double monthlyIncome;
 
+    public Customer(Integer id, String name, String phone, String email, String address, Double monthlyIncome) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.monthlyIncome = monthlyIncome;
+    }
+
+    public Customer() {
+    }
+
     public Integer getId() {
         return id;
     }

@@ -12,6 +12,9 @@ public class Loan_Package {
     int min_transacantion_count;
     String description;
 
+    public Loan_Package() {
+    }
+
     public Loan_Package(int id, String name, BigDecimal max_amout, BigDecimal interest_rate, BigDecimal min_monthly_income, int min_transacantion_count, String description) {
         this.id = id;
         this.name = name;

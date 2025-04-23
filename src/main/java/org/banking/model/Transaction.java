@@ -11,6 +11,9 @@ public class Transaction {
     BigDecimal amout;
     Timestamp created_at;
 
+    public Transaction() {
+    }
+
     public Transaction(int id, int from_account, int to_account, BigDecimal amout, Timestamp created_at) {
         this.id = id;
         this.from_account = from_account;

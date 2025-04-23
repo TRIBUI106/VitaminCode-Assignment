@@ -14,6 +14,9 @@ public class Branch {
     private String name;
     private String location;
 
+    public Branch() {
+    }
+
     public Branch(Integer id, String name, String location) {
         this.id = id;
         this.name = name;

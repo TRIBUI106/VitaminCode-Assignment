@@ -9,6 +9,9 @@ public class Card {
     String card_number;
     Date expiry_date;
 
+    public Card() {
+    }
+
     public Card(int id, int account_id, String card_number, Date expiry_date) {
         this.id = id;
         this.account_id = account_id;
