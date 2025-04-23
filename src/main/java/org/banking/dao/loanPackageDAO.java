@@ -46,7 +46,7 @@ public class loanPackageDAO implements DAO<Loan_Package, Integer> {
             loanPackage.setMax_amout(rs.getBigDecimal("max_amount"));
             loanPackage.setInterest_rate(rs.getBigDecimal("interest_rate"));
             loanPackage.setMinMonthlyIncome(rs.getBigDecimal("min_monthly_income"));
-            loanPackage.setMin_transaction_count(rs.getInt("min_transaction_count"));
+            loanPackage.setMin_transacantion_count(rs.getInt("min_transaction_count"));
             loanPackage.setDescription(rs.getString("description"));
             loanPackages.add(loanPackage);
         }
@@ -65,7 +65,7 @@ public class loanPackageDAO implements DAO<Loan_Package, Integer> {
             loanPackage.setMax_amout(rs.getBigDecimal("max_amount"));
             loanPackage.setInterest_rate(rs.getBigDecimal("interest_rate"));
             loanPackage.setMinMonthlyIncome(rs.getBigDecimal("min_monthly_income"));
-            loanPackage.setMin_transaction_count(rs.getInt("min_transaction_count"));
+            loanPackage.setMin_transacantion_count(rs.getInt("min_transaction_count"));
             loanPackage.setDescription(rs.getString("description"));
         }
         return loanPackage;
