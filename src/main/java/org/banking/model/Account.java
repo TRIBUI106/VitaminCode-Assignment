@@ -4,17 +4,17 @@ import java.math.BigDecimal;
 
 public class Account {
     int id;
-    int customer_id;
-    int branch_id;
+    int customerId;
+    int branchId;
     BigDecimal balance;
 
     public Account() {
     }
 
-    public Account(int id, int customer_id, int branch_id, BigDecimal balance) {
+    public Account(int id, int customer_id, int branchId, BigDecimal balance) {
         this.id = id;
-        this.customer_id = customer_id;
-        this.branch_id = branch_id;
+        this.customerId = customer_id;
+        this.branchId = branchId;
         this.balance = balance;
     }
 
@@ -26,20 +26,20 @@ public class Account {
         this.id = id;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public int getBranch_id() {
-        return branch_id;
+    public int getBranchId() {
+        return branchId;
     }
 
-    public void setBranch_id(int branch_id) {
-        this.branch_id = branch_id;
+    public void setBranchId(int branchId) {
+        this.branchId = branchId;
     }
 
     public BigDecimal getBalance() {

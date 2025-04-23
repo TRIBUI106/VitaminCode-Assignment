@@ -19,13 +19,13 @@ public class accountDAO implements DAO<Account, Integer> {
     @Override
     public Integer insert(Account entity) throws SQLException {
         String sql = "INSERT INTO accounts (customer_id, branch_id, balance) VALUES (?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getCustomer_id(), entity.getBranch_id(), entity.getBalance());
+        return db.exeuteUpdate(sql, entity.getCustomerId(), entity.getBranchId(), entity.getBalance());
     }
 
     @Override
     public Integer update(Account entity, Integer id) throws SQLException {
         String sql = "UPDATE accounts SET customer_id = ?, branch_id = ?, balance = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getCustomer_id(), entity.getBranch_id(), entity.getBalance(), id);
+        return db.exeuteUpdate(sql, entity.getCustomerId(), entity.getBranchId(), entity.getBalance(), id);
     }
 
     @Override
@@ -42,8 +42,8 @@ public class accountDAO implements DAO<Account, Integer> {
         while (rs.next()) {
             Account account = new Account();
             account.setId(rs.getInt("id"));
-            account.setCustomer_id(rs.getInt("customer_id"));
-            account.setBranch_id(rs.getInt("branch_id"));
+            account.setCustomerId(rs.getInt("customer_id"));
+            account.setBranchId(rs.getInt("branch_id"));
             account.setBalance(rs.getBigDecimal("balance"));
             accounts.add(account);
         }
@@ -58,8 +58,8 @@ public class accountDAO implements DAO<Account, Integer> {
         if (rs.next()) {
             account = new Account();
             account.setId(rs.getInt("id"));
-            account.setCustomer_id(rs.getInt("customer_id"));
-            account.setBranch_id(rs.getInt("branch_id"));
+            account.setCustomerId(rs.getInt("customer_id"));
+            account.setBranchId(rs.getInt("branch_id"));
             account.setBalance(rs.getBigDecimal("balance"));
         }
         return account;
