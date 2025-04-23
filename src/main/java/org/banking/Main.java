@@ -62,8 +62,8 @@ public class Main {
             loanPackageDAO lpDao = new loanPackageDAO();
 
             while (true) {
-                // Hiển thị menu
-                System.out.println("\n╔══════════════════════ Menu Quản Lý Ngân Hàng ══════════════════════╗");
+                System.out.println();
+                System.out.println("╔══════════════════════ Menu Quản Lý Ngân Hàng ══════════════════════╗");
                 System.out.println("║ 1.  Tạo thông tin khách hàng                                       ║");
                 System.out.println("║ 2.  Tạo tài khoản ngân hàng                                        ║");
                 System.out.println("║ 3.  Lấy toàn bộ danh sách khách hàng                               ║");
