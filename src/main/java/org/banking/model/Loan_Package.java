@@ -8,7 +8,7 @@ public class Loan_Package {
     String name;
     BigDecimal max_amout;
     BigDecimal interest_rate;
-    BigDecimal min_monthly_income;
+    BigDecimal minMonthlyIncome;
     int min_transacantion_count;
     String description;
 
@@ -20,7 +20,7 @@ public class Loan_Package {
         this.name = name;
         this.max_amout = max_amout;
         this.interest_rate = interest_rate;
-        this.min_monthly_income = min_monthly_income;
+        this.minMonthlyIncome = min_monthly_income;
         this.min_transacantion_count = min_transacantion_count;
         this.description = description;
     }
@@ -57,12 +57,12 @@ public class Loan_Package {
         this.interest_rate = interest_rate;
     }
 
-    public BigDecimal getMin_monthly_income() {
-        return min_monthly_income;
+    public BigDecimal getMinMonthlyIncome() {
+        return minMonthlyIncome;
     }
 
-    public void setMin_monthly_income(BigDecimal min_monthly_income) {
-        this.min_monthly_income = min_monthly_income;
+    public void setMinMonthlyIncome(BigDecimal minMonthlyIncome) {
+        this.minMonthlyIncome = minMonthlyIncome;
     }
 
     public int getMin_transacantion_count() {

@@ -19,13 +19,13 @@ public class loanPackageDAO implements DAO<Loan_Package, Integer> {
     @Override
     public Integer insert(Loan_Package entity) throws SQLException {
         String sql = "INSERT INTO loan_packages (name, max_amount, interest_rate, min_monthly_income, min_transaction_count, description) VALUES (?, ?, ?, ?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getName(), entity.getMax_amout(), entity.getInterest_rate(), entity.getMin_monthly_income(), entity.getMin_transacantion_count(), entity.getDescription());
+        return db.exeuteUpdate(sql, entity.getName(), entity.getMax_amout(), entity.getInterest_rate(), entity.getMinMonthlyIncome(), entity.getMin_transacantion_count(), entity.getDescription());
     }
 
     @Override
     public Integer update(Loan_Package entity, Integer id) throws SQLException {
         String sql = "UPDATE loan_packages SET name = ?, max_amount = ?, interest_rate = ?, min_monthly_income = ?, min_transaction_count = ?, description = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getName(), entity.getMax_amout(), entity.getInterest_rate(), entity.getMin_monthly_income(), entity.getMin_transacantion_count(), entity.getDescription(), id);
+        return db.exeuteUpdate(sql, entity.getName(), entity.getMax_amout(), entity.getInterest_rate(), entity.getMinMonthlyIncome(), entity.getMin_transacantion_count(), entity.getDescription(), id);
     }
 
     @Override
