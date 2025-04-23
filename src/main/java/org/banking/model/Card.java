@@ -5,18 +5,18 @@ import java.sql.Date;
 public class Card {
 
     int id;
-    int account_id;
-    String card_number;
-    Date expiry_date;
+    int accountId;
+    String cardNumber;
+    Date expiryDate;
 
     public Card() {
     }
 
-    public Card(int id, int account_id, String card_number, Date expiry_date) {
+    public Card(int id, int accountId, String cardNumber, Date expiryDate) {
         this.id = id;
-        this.account_id = account_id;
-        this.card_number = card_number;
-        this.expiry_date = expiry_date;
+        this.accountId = accountId;
+        this.cardNumber = cardNumber;
+        this.expiryDate = expiryDate;
     }
 
     public int getId() {
@@ -27,27 +27,27 @@ public class Card {
         this.id = id;
     }
 
-    public int getAccount_id() {
-        return account_id;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setAccount_id(int account_id) {
-        this.account_id = account_id;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
-    public String getCard_number() {
-        return card_number;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setCard_number(String card_number) {
-        this.card_number = card_number;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public Date getExpiry_date() {
-        return expiry_date;
+    public Date getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setExpiry_date(Date expiry_date) {
-        this.expiry_date = expiry_date;
+    public void setExpiryDate(Date expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }

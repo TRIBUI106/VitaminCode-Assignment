@@ -19,13 +19,13 @@ public class transactionDAO implements DAO<Transaction, Integer> {
     @Override
     public Integer insert(Transaction entity) throws SQLException {
         String sql = "INSERT INTO transactions (from_account, to_account, amount, created_at) VALUES (?, ?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getFrom_account(), entity.getTo_account(), entity.getAmout(), entity.getCreated_at());
+        return db.exeuteUpdate(sql, entity.getFromAccount(), entity.getToAccount(), entity.getAmount(), entity.getCreatedAt());
     }
 
     @Override
     public Integer update(Transaction entity, Integer id) throws SQLException {
         String sql = "UPDATE transactions SET from_account = ?, to_account = ?, amount = ?, created_at = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getFrom_account(), entity.getTo_account(), entity.getAmout(), entity.getCreated_at(), id);
+        return db.exeuteUpdate(sql, entity.getFromAccount(), entity.getToAccount(), entity.getAmount(), entity.getCreatedAt(), id);
     }
 
     @Override
@@ -42,10 +42,10 @@ public class transactionDAO implements DAO<Transaction, Integer> {
         while (rs.next()) {
             Transaction transaction = new Transaction();
             transaction.setId(rs.getInt("id"));
-            transaction.setFrom_account(rs.getInt("from_account"));
-            transaction.setTo_account(rs.getInt("to_account"));
-            transaction.setAmout(rs.getBigDecimal("amount"));
-            transaction.setCreated_at(rs.getTimestamp("created_at"));
+            transaction.setFromAccount(rs.getInt("from_account"));
+            transaction.setToAccount(rs.getInt("to_account"));
+            transaction.setAmount(rs.getBigDecimal("amount"));
+            transaction.setCreatedAt(rs.getTimestamp("created_at"));
             transactions.add(transaction);
         }
         return transactions;
@@ -59,10 +59,10 @@ public class transactionDAO implements DAO<Transaction, Integer> {
         if (rs.next()) {
             transaction = new Transaction();
             transaction.setId(rs.getInt("id"));
-            transaction.setFrom_account(rs.getInt("from_account"));
-            transaction.setTo_account(rs.getInt("to_account"));
-            transaction.setAmout(rs.getBigDecimal("amount"));
-            transaction.setCreated_at(rs.getTimestamp("created_at"));
+            transaction.setFromAccount(rs.getInt("from_account"));
+            transaction.setToAccount(rs.getInt("to_account"));
+            transaction.setAmount(rs.getBigDecimal("amount"));
+            transaction.setCreatedAt(rs.getTimestamp("created_at"));
         }
         return transaction;
     }

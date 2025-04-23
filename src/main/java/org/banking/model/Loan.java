@@ -6,25 +6,25 @@ import java.sql.Date;
 public class Loan {
 
     int id;
-    int account_id;
-    int load_package_id;
+    int accountId;
+    int loadPackageId;
     BigDecimal amount;
-    BigDecimal interest_rate;
-    int term_in_months;
-    Date start_date;
+    BigDecimal interestRate;
+    int termInMonths;
+    Date startDate;
     String status;
 
     public Loan() {
     }
 
-    public Loan(int id, int account_id, int load_package_id, BigDecimal amount, BigDecimal interest_rate, int term_in_months, Date start_date, String status) {
+    public Loan(int id, int accountId, int loadPackageId, BigDecimal amount, BigDecimal interestRate, int termInMonths, Date startDate, String status) {
         this.id = id;
-        this.account_id = account_id;
-        this.load_package_id = load_package_id;
+        this.accountId = accountId;
+        this.loadPackageId = loadPackageId;
         this.amount = amount;
-        this.interest_rate = interest_rate;
-        this.term_in_months = term_in_months;
-        this.start_date = start_date;
+        this.interestRate = interestRate;
+        this.termInMonths = termInMonths;
+        this.startDate = startDate;
         this.status = status;
     }
 
@@ -36,20 +36,20 @@ public class Loan {
         this.id = id;
     }
 
-    public int getAccount_id() {
-        return account_id;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setAccount_id(int account_id) {
-        this.account_id = account_id;
+    public void setAccountId(int account_id) {
+        this.accountId = account_id;
     }
 
-    public int getLoad_package_id() {
-        return load_package_id;
+    public int getLoadPackageId() {
+        return loadPackageId;
     }
 
-    public void setLoad_package_id(int load_package_id) {
-        this.load_package_id = load_package_id;
+    public void setLoadPackageId(int loadPackageId) {
+        this.loadPackageId = loadPackageId;
     }
 
     public BigDecimal getAmount() {
@@ -60,28 +60,28 @@ public class Loan {
         this.amount = amount;
     }
 
-    public BigDecimal getInterest_rate() {
-        return interest_rate;
+    public BigDecimal getInterestRate() {
+        return interestRate;
     }
 
-    public void setInterest_rate(BigDecimal interest_rate) {
-        this.interest_rate = interest_rate;
+    public void setInterestRate(BigDecimal interestRate) {
+        this.interestRate = interestRate;
     }
 
-    public int getTerm_in_months() {
-        return term_in_months;
+    public int getTermInMonths() {
+        return termInMonths;
     }
 
-    public void setTerm_in_months(int term_in_months) {
-        this.term_in_months = term_in_months;
+    public void setTermInMonths(int termInMonths) {
+        this.termInMonths = termInMonths;
     }
 
-    public Date getStart_date() {
-        return start_date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStart_date(Date start_date) {
-        this.start_date = start_date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public String getStatus() {

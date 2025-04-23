@@ -6,20 +6,20 @@ import java.sql.Timestamp;
 public class Transaction {
 
     int id;
-    int from_account;
-    int to_account;
-    BigDecimal amout;
-    Timestamp created_at;
+    int fromAccount;
+    int toAccount;
+    BigDecimal amount;
+    Timestamp createdAt;
 
     public Transaction() {
     }
 
-    public Transaction(int id, int from_account, int to_account, BigDecimal amout, Timestamp created_at) {
+    public Transaction(int id, int fromAccount, int toAccount, BigDecimal amount, Timestamp createdAt) {
         this.id = id;
-        this.from_account = from_account;
-        this.to_account = to_account;
-        this.amout = amout;
-        this.created_at = created_at;
+        this.fromAccount = fromAccount;
+        this.toAccount = toAccount;
+        this.amount = amount;
+        this.createdAt = createdAt;
     }
 
     public int getId() {
@@ -30,35 +30,35 @@ public class Transaction {
         this.id = id;
     }
 
-    public int getFrom_account() {
-        return from_account;
+    public int getFromAccount() {
+        return fromAccount;
     }
 
-    public void setFrom_account(int from_account) {
-        this.from_account = from_account;
+    public void setFromAccount(int fromAccount) {
+        this.fromAccount = fromAccount;
     }
 
-    public int getTo_account() {
-        return to_account;
+    public int getToAccount() {
+        return toAccount;
     }
 
-    public void setTo_account(int to_account) {
-        this.to_account = to_account;
+    public void setToAccount(int toAccount) {
+        this.toAccount = toAccount;
     }
 
-    public BigDecimal getAmout() {
-        return amout;
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    public void setAmout(BigDecimal amout) {
-        this.amout = amout;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 }

@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBHelper {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/vitacode00";
+    private static final String URL = "jdbc:mysql://localhost:3306/vitamincode00";
     private static final String USERNAME = "root";
     private static final String PSW = "1234";
 

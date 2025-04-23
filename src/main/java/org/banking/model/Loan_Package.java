@@ -6,22 +6,22 @@ public class Loan_Package {
 
     int id;
     String name;
-    BigDecimal max_amout;
-    BigDecimal interest_rate;
+    BigDecimal maxAmount;
+    BigDecimal interestRate;
     BigDecimal minMonthlyIncome;
-    int min_transacantion_count;
+    int minTransactionCount;
     String description;
 
     public Loan_Package() {
     }
 
-    public Loan_Package(int id, String name, BigDecimal max_amout, BigDecimal interest_rate, BigDecimal min_monthly_income, int min_transacantion_count, String description) {
+    public Loan_Package(int id, String name, BigDecimal maxAmount, BigDecimal interestRate, BigDecimal min_monthly_income, int minTransactionCount, String description) {
         this.id = id;
         this.name = name;
-        this.max_amout = max_amout;
-        this.interest_rate = interest_rate;
+        this.maxAmount = maxAmount;
+        this.interestRate = interestRate;
         this.minMonthlyIncome = min_monthly_income;
-        this.min_transacantion_count = min_transacantion_count;
+        this.minTransactionCount = minTransactionCount;
         this.description = description;
     }
 
@@ -41,20 +41,20 @@ public class Loan_Package {
         this.name = name;
     }
 
-    public BigDecimal getMax_amout() {
-        return max_amout;
+    public BigDecimal getMaxAmount() {
+        return maxAmount;
     }
 
-    public void setMax_amout(BigDecimal max_amout) {
-        this.max_amout = max_amout;
+    public void setMaxAmount(BigDecimal maxAmount) {
+        this.maxAmount = maxAmount;
     }
 
-    public BigDecimal getInterest_rate() {
-        return interest_rate;
+    public BigDecimal getInterestRate() {
+        return interestRate;
     }
 
-    public void setInterest_rate(BigDecimal interest_rate) {
-        this.interest_rate = interest_rate;
+    public void setInterestRate(BigDecimal interestRate) {
+        this.interestRate = interestRate;
     }
 
     public BigDecimal getMinMonthlyIncome() {
@@ -65,12 +65,12 @@ public class Loan_Package {
         this.minMonthlyIncome = minMonthlyIncome;
     }
 
-    public int getMin_transacantion_count() {
-        return min_transacantion_count;
+    public int getMinTransactionCount() {
+        return minTransactionCount;
     }
 
-    public void setMin_transacantion_count(int min_transacantion_count) {
-        this.min_transacantion_count = min_transacantion_count;
+    public void setMinTransactionCount(int minTransactionCount) {
+        this.minTransactionCount = minTransactionCount;
     }
 
     public String getDescription() {

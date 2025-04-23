@@ -19,13 +19,13 @@ public class loanDAO implements DAO<Loan, Integer> {
     @Override
     public Integer insert(Loan entity) throws SQLException {
         String sql = "INSERT INTO loans (account_id, load_package_id, amount, interest_rate, term_in_months, start_date, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getLoad_package_id(), entity.getAmount(), entity.getInterest_rate(), entity.getTerm_in_months(), entity.getStart_date(), entity.getStatus());
+        return db.exeuteUpdate(sql, entity.getAccountId(), entity.getLoadPackageId(), entity.getAmount(), entity.getInterestRate(), entity.getTermInMonths(), entity.getStartDate(), entity.getStatus());
     }
 
     @Override
     public Integer update(Loan entity, Integer id) throws SQLException {
         String sql = "UPDATE loans SET account_id = ?, load_package_id = ?, amount = ?, interest_rate = ?, term_in_months = ?, start_date = ?, status = ? WHERE id = ?";
-        return db.exeuteUpdate(sql, entity.getAccount_id(), entity.getLoad_package_id(), entity.getAmount(), entity.getInterest_rate(), entity.getTerm_in_months(), entity.getStart_date(), entity.getStatus(), id);
+        return db.exeuteUpdate(sql, entity.getAccountId(), entity.getLoadPackageId(), entity.getAmount(), entity.getInterestRate(), entity.getTermInMonths(), entity.getStartDate(), entity.getStatus(), id);
     }
 
     @Override
@@ -42,12 +42,12 @@ public class loanDAO implements DAO<Loan, Integer> {
         while (rs.next()) {
             Loan loan = new Loan();
             loan.setId(rs.getInt("id"));
-            loan.setAccount_id(rs.getInt("account_id"));
-            loan.setLoad_package_id(rs.getInt("load_package_id"));
+            loan.setAccountId(rs.getInt("account_id"));
+            loan.setLoadPackageId(rs.getInt("load_package_id"));
             loan.setAmount(rs.getBigDecimal("amount"));
-            loan.setInterest_rate(rs.getBigDecimal("interest_rate"));
-            loan.setTerm_in_months(rs.getInt("term_in_months"));
-            loan.setStart_date(rs.getDate("start_date"));
+            loan.setInterestRate(rs.getBigDecimal("interest_rate"));
+            loan.setTermInMonths(rs.getInt("term_in_months"));
+            loan.setStartDate(rs.getDate("start_date"));
             loan.setStatus(rs.getString("status"));
             loans.add(loan);
         }
@@ -62,12 +62,12 @@ public class loanDAO implements DAO<Loan, Integer> {
         if (rs.next()) {
             loan = new Loan();
             loan.setId(rs.getInt("id"));
-            loan.setAccount_id(rs.getInt("account_id"));
-            loan.setLoad_package_id(rs.getInt("load_package_id"));
+            loan.setAccountId(rs.getInt("account_id"));
+            loan.setLoadPackageId(rs.getInt("load_package_id"));
             loan.setAmount(rs.getBigDecimal("amount"));
-            loan.setInterest_rate(rs.getBigDecimal("interest_rate"));
-            loan.setTerm_in_months(rs.getInt("term_in_months"));
-            loan.setStart_date(rs.getDate("start_date"));
+            loan.setInterestRate(rs.getBigDecimal("interest_rate"));
+            loan.setTermInMonths(rs.getInt("term_in_months"));
+            loan.setStartDate(rs.getDate("start_date"));
             loan.setStatus(rs.getString("status"));
         }
         return loan;

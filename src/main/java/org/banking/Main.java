@@ -575,7 +575,6 @@ public class Main {
                     case 14: // Thoát chương trình
                         System.out.println("Đã thoát chương trình! Cảm ơn bạn đã sử dụng.");
                         return;
-
                     default:
                         System.out.println("Chức năng không hợp lệ! Vui lòng chọn từ 1 đến 14.");
                 }
