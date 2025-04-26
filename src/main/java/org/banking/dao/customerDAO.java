@@ -43,13 +43,13 @@ public class customerDAO implements DAO<Customer,Integer>{
         List<Customer> listCustomer = new ArrayList<>();
         while (rs.next())
         {
-            Customer item = new Customer();
-            item.setId(rs.getInt("id"));
-            item.setName(rs.getString("name"));
-            item.setPhone(rs.getString("phone"));
-            item.setAddress(rs.getString("address"));
-            item.setMonthlyIncome(rs.getDouble("monthly_income"));
-            listCustomer.add(item);
+            Customer c = new Customer();
+            c.setId(rs.getInt("id"));
+            c.setName(rs.getString("name"));
+            c.setPhone(rs.getString("phone"));
+            c.setAddress(rs.getString("address"));
+            c.setMonthlyIncome(rs.getDouble("monthly_income"));
+            listCustomer.add(c);
         }
         return listCustomer;
     }
